@@ -1,0 +1,46 @@
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background-color: rgb(73, 73, 150);
+}
+
+nav > ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+nav > ul > li > a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(73, 73, 150);
+  color: aliceblue;
+  padding: 1em;
+}

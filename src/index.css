@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-color: rgb(19, 19, 88);
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -16,7 +20,12 @@ body {
 }
 
 header {
-  background-color: rgb(73, 73, 150);
+  background-color: var(--main-color);
+}
+
+nav {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 nav > ul {
@@ -28,6 +37,12 @@ nav > ul {
 nav > ul > li > a {
   color: aliceblue;
   text-decoration: none;
+  transition: all 0.2s;
+}
+
+nav > ul > li > a:hover {
+  color: rgb(85, 154, 214);
+  color: rgb(101, 213, 228);
 }
 
 li {
@@ -36,11 +51,251 @@ li {
 
 main {
   flex: 1;
+  display: flex;
 }
 
 footer {
   text-align: center;
-  background-color: rgb(73, 73, 150);
+  background-color: var(--main-color);
   color: aliceblue;
   padding: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  line-height: 1.5;
+}
+
+section {
+  width: 100%;
+  padding: 1em;
+  background-color: rgb(221, 221, 231);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Home Page */
+
+.home-page-heading {
+  font-size: 2.5rem;
+}
+
+.login-eading {
+  font-size: 2rem;
+}
+
+.home-page {
+  background-image: url(./assets/movie-posters.avif);
+  background-position: center;
+  background-size: cover;
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  gap: 2em;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 550px;
+}
+
+.home-page::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 10;
+}
+
+.home-page > * {
+  position: relative;
+  z-index: 11;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 0.5em;
+}
+
+.hero-btn {
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  border: 1px solid rgb(76, 111, 177);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  color: white;
+  font-weight: 700;
+}
+
+.filled-btn {
+  background-color: rgb(76, 111, 177);
+}
+
+.ghost-btn {
+  background-color: rgba(0, 0, 0, 0.192);
+}
+
+.in-text-link {
+  color: rgb(114, 164, 255);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* Rate Page */
+
+.rate-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.7em;
+}
+
+.poster-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.poster {
+  width: 70%;
+  max-width: 300px;
+}
+
+.poster-img {
+  width: 100%;
+  border-radius: 0.4em;
+}
+
+.stars {
+  display: flex;
+  gap: 0em;
+  cursor: pointer;
+}
+
+.star {
+  padding-inline: 0.15em;
+}
+
+.rate-btn {
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  border: 1px solid var(--main-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  color: white;
+  font-weight: 700;
+}
+
+.white-btn {
+  color: black;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.75);
+  background-color: white;
+}
+
+/* Login Page */
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  text-align: center;
+  max-width: 450px;
+}
+
+input {
+  width: 100%;
+}
+
+.form-link, form > button, input {
+  border: 1px solid black;
+  padding: 0.5em;
+  font-size: 1rem;
+}
+
+/* Watchlist Page */
+
+.watchlist-page {
+  display: flex;
+  justify-content: center;
+  padding-block: 0;
+}
+
+.movie-list {
+  padding-block: 1em;
+  height: 100%;
+  max-width: 1000px;
+  border-inline: 1px solid black;
+  margin: o auto;
+  flex: 1;
+}
+
+@media (min-width: 1024px) {
+  .home-page-heading {
+    font-size: 3rem;
+  }
+
+  .hero-text > p {
+    font-size: 1.4rem;
+  }
+
+  .hero-text {
+    max-width: 750px;
+    gap: 2em;
+  }
+
+  header {
+    padding: 1em;
+  }
+
+  nav > ul > li > a {
+    font-size: 1.6rem;
+  }
+
+  nav {
+    max-width: 800px;
+  }
+
+  .hero-btns {
+    gap: 1em;
+  }
+
+  .hero-btn, .rate-btn {
+    padding: 0.5em 1.5em;
+    font-size: 1.2rem;
+  }
+
+  .rate-page {
+    gap: 3em;
+  }
+
+  .star {
+    padding-inline: 0.25em;
+  }
 }
